@@ -10,16 +10,16 @@ int main()
 	char* p;
 	char s[200];
 	int i = 0;
-	ifstream f("plm.txt");
-	ofstream g("clsidt.txt");
-	while (f.getline(s, 200))
+	ifstream f("<txt file with class ids>.txt");//input file
+	ofstream g("clsid.txt");//output file
+	while (f.getline(s, 200))//read every line in the char while true
 	{
-		p = strtok(s, "(");
-		g << p << " = " << i << "," << endl;
+		p = strtok(s, "(");//get every character from the start to our delimiter "("
+		g << p << " = " << i << "," << endl;//output what is in the pointer with = the line number
 		i++;
 	}
-	f.close();
-	g.close();
+	f.close();//close the input file
+	g.close();//same
 
 	return 0;
 }
